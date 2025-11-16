@@ -1,5 +1,5 @@
 # VH-03-02 Analysis of Large Dataset using Polars Open-Source Library
-Author: Khoo Yu Heng Jason (G2405638F), See Kwai Sheng (G2304088G), Tay Kian Koon (G2406555A)
+#### Author: Khoo Yu Heng Jason (G2405638F), See Kwai Sheng (G2304088G), Tay Kian Koon (G2406555A)
 *A Critical Inquiry Project submitted in partial fulfillment of the requirements for the Nanyang Technological University - Master of Science in Information Systems (MSIS) and Master of Science in Information Studies (IS).*
 
 This repository contains the end-to-end data pipeline for a comprehensive analysis of hotel reviews. It scrapes, cleans, and consolidates reviews from 5 distinct sources, performs Aspect-Based Sentiment Analysis (ABSA), and generates AI-driven summaries, culminating in an interactive management dashboard built with Streamlit.
