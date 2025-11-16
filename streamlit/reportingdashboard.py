@@ -13,7 +13,7 @@ import plotly.express as px
 import numpy as np
 import os
 from PIL import Image
-import path
+from pathlib import Path
 
 # ==============================================================================
 # PAGE CONFIGURATION
