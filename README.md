@@ -4,9 +4,9 @@
 
 This repository contains the end-to-end data pipeline for a comprehensive analysis of hotel reviews. It scrapes, cleans, and consolidates reviews from 5 distinct sources, performs Aspect-Based Sentiment Analysis (ABSA), and generates AI-driven summaries, culminating in an interactive management dashboard built with Streamlit.
 
-## Live Dashboard
+## Dashboard
 The final interactive dashboard application is deployed on Streamlit Community Cloud.
-### ➡️ **[View the Live Dashboard Here](https://ntu-ci-vh-03-02-absa-dashboard.streamlit.app/)**
+### ➡️ **[View the Dashboard Here](https://ntu-ci-vh-03-02-absa-dashboard.streamlit.app/)**
 
 ## Core Features 
 1. Scrapes data from 5 sources: Google Maps, Booking.com, Trip.com, Klook, and Trip Advisor.
