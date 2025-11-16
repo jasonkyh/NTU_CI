@@ -1,5 +1,0 @@
-Library,Task,Time (s),Memory (MB)
-Pandas,Imputation,0.15372093750011118,51.53125
-Pandas,Text Analysis,0.5196281459998318,7.84375
-Polars,Imputation,0.05828852049944544,47.65625
-Polars,Text Analysis,0.09659377050002149,32.46875
