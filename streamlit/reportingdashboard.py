@@ -19,8 +19,12 @@ from pathlib import Path
 # PAGE CONFIGURATION
 # ==============================================================================
 
+# --- Define a BASE_DIR relative to this script's location ---
+# This ensures all paths work in Streamlit Cloud.
+BASE_DIR = Path(__file__).parent
+
 # --- Use an image for the page icon ---
-icon_path = "asset/icon-logo.png"
+icon_path = BASE_DIR / "asset" / "icon-logo.png"
 try:
     page_icon = Image.open(icon_path)
 except FileNotFoundError:
@@ -42,7 +46,7 @@ def load_data(path):
     Loads the ABSA results, converts date columns, and creates new
     'year', 'month', 'has_sentiment', and 'overall_sentiment' columns.
     """
-    if not os.path.exists(path):
+    if not path.exists():
         st.error(f"Data file not found at: {path}")
         st.stop()
 
@@ -88,9 +92,13 @@ def load_data(path):
 @st.cache_data
 def load_insights(path):
     """Loads the CSV file containing AI-generated summaries and action plans."""
-    if not os.path.exists(path):
+    if not path.exists():
         return None
     return pd.read_csv(path)
+
+# --- Required for streamlit cloud deployment: load the data using the new, robust paths ---
+data_file_path = BASE_DIR / "data" / "absa_analysis_twostep_results_wide.csv"
+insights_file_path = BASE_DIR / "data" / "gemini_actionable_insights.csv"
 
 # Load the data using the cached function
 df = load_data("data/absa_analysis_twostep_results_wide.csv")
@@ -155,9 +163,9 @@ if st.session_state.room_view_filter != 'Select All':
 # ==============================================================================
 # MAIN DASHBOARD AREA
 # ==============================================================================
-header_logo_path = "asset/header-logo.jpg"
-if os.path.exists(header_logo_path):
-    st.image(header_logo_path)
+header_logo_path = BASE_DIR / "asset" / "header-logo.jpg"
+if header_logo_path.exists():
+    st.image(str(header_logo_path))
 
 st.title("Hotel Review Insights Dashboard")
 st.markdown("An interactive dashboard for analyzing aspect-based sentiment from guest reviews.")
