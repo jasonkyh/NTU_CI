@@ -5,7 +5,7 @@
 This repository contains the end-to-end data pipeline for a comprehensive analysis of hotel reviews. It scrapes, cleans, and consolidates reviews from 5 distinct sources, performs Aspect-Based Sentiment Analysis (ABSA), and generates AI-driven summaries, culminating in an interactive management dashboard built with Streamlit.
 
 ## Live Dashboard
-The final interactive dashboard is deployed on Streamlit Community Cloud.
+The final interactive dashboard application is deployed on Streamlit Community Cloud.
 ### ➡️ **[View the Live Dashboard Here](https://ntu-ci-vh-03-02-absa-dashboard.streamlit.app/)**
 
 ## Core Features 
@@ -20,9 +20,9 @@ The final interactive dashboard is deployed on Streamlit Community Cloud.
 ## Project Pipeline
 The project is structured as a series of notebooks, designed to be run in the following order:
 - 1A-1E (Web Scraping): Five separate notebooks using Selenium and Playwright to scrape raw review data from each source.
-- 2. Translation.ipynb: Processes the scraped data and uses the Google Cloud Translation API to translate all non-English reviews to English for unified analysis.
-- 3A. Consolidation of Reviews.ipynb: Merges the five translated datasets, resolves schema differences, and creates a single, unified dataset. This notebook also contains the first benchmark for data consolidation.
-- 3B. EDA.ipynb: Performs comprehensive Exploratory Data Analysis, data imputation (handling missing values), and feature engineering. This notebook contains the core Pandas vs. Polars benchmarks for imputation and text analysis.
-- 4A. ABSA.ipynb: Implements a two-step Aspect-Based Sentiment Analysis pipeline to extract key aspects (e.g. "Room Quality & Comfort", "Customer Service & Staff") and their associated sentiment from review text.
-- 4B. AI Generated Summaries.ipynb: Uses the Google Gemini API to generate actionable, natural-language summaries from the ABSA results (e.g. "Top 20 positive reviews for "Dining Experience").
+- 2 Translation.ipynb: Processes the scraped data and uses the Google Cloud Translation API to translate all non-English reviews to English for unified analysis.
+- 3A Consolidation of Reviews.ipynb: Merges the five translated datasets, resolves schema differences, and creates a single, unified dataset. This notebook also contains the first benchmark for data consolidation.
+- 3B EDA.ipynb: Performs comprehensive Exploratory Data Analysis, data imputation (handling missing values), and feature engineering. This notebook contains the core Pandas vs. Polars benchmarks for imputation and text analysis.
+- 4A ABSA.ipynb: Implements a two-step Aspect-Based Sentiment Analysis pipeline to extract key aspects (e.g. "Room Quality & Comfort", "Customer Service & Staff") and their associated sentiment from review text.
+- 4B AI Generated Summaries.ipynb: Uses the Google Gemini API to generate actionable, natural-language summaries from the ABSA results (e.g. "Top 20 positive reviews for "Dining Experience").
 - reportingdashboard.py: A final Streamlit application that loads the ABSA and AI summary results to create an interactive dashboard for management insights.
