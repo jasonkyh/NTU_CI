@@ -12,7 +12,8 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 import os
-from PIL import Image 
+from PIL import Image
+import path
 
 # ==============================================================================
 # PAGE CONFIGURATION
@@ -92,8 +93,8 @@ def load_insights(path):
     return pd.read_csv(path)
 
 # Load the data using the cached function
-df = load_data("./data/absa_analysis_twostep_results_wide.csv")
-insights_df = load_insights("./data/gemini_actionable_insights.csv")
+df = load_data("data/absa_analysis_twostep_results_wide.csv")
+insights_df = load_insights("data/gemini_actionable_insights.csv")
 
 # ==============================================================================
 # SIDEBAR FILTERS
