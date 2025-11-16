@@ -101,8 +101,8 @@ data_file_path = BASE_DIR / "data" / "absa_analysis_twostep_results_wide.csv"
 insights_file_path = BASE_DIR / "data" / "gemini_actionable_insights.csv"
 
 # Load the data using the cached function
-df = load_data("data/absa_analysis_twostep_results_wide.csv")
-insights_df = load_insights("data/gemini_actionable_insights.csv")
+df = load_data(data_file_path)
+insights_df = load_insights(insights_file_path)
 
 # ==============================================================================
 # SIDEBAR FILTERS
