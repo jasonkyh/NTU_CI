@@ -26,3 +26,38 @@ The project is structured as a series of notebooks, designed to be run in the fo
 - 4A ABSA.ipynb: Implements a two-step Aspect-Based Sentiment Analysis pipeline to extract key aspects (e.g. "Room Quality & Comfort", "Customer Service & Staff") and their associated sentiment from review text.
 - 4B AI Generated Summaries.ipynb: Uses the Google Gemini API to generate actionable, natural-language summaries from the ABSA results (e.g. "Top 20 positive reviews for "Dining Experience").
 - reportingdashboard.py: A final Streamlit application that loads the ABSA and AI summary results to create an interactive dashboard for management insights.
+
+## Repository Structure
+The project is organized into logical directories reflecting the end-to-end data pipeline:
+
+```text
+.
+├── Scripts/                                  # Core Jupyter Notebooks (Run in numerical order)
+│   ├── 1A...1E. Web Scraping...ipynb         # Scraping scripts for 5 platforms (Selenium/Playwright)
+│   ├── 2. Translation.ipynb                  # Google Cloud Translation API pipeline
+│   ├── 3A. Consolidation of Reviews.ipynb    # Merging sources, schema alignment & cleaning
+│   ├── 3B. EDA.ipynb                         # EDA, Imputation & Polars vs. Pandas Benchmarking
+│   ├── 4A. ABSA.ipynb                        # Two-step Aspect-Based Sentiment Analysis pipeline
+│   └── 4B. AI Generated Summaries.ipynb      # Gemini AI summarization & strategic recommendations
+│
+├── streamlit/                                # Interactive Dashboard Application
+│   ├── reportingdashboard.py                 # Main Streamlit application script
+│   ├── requirements.txt                      # App-specific dependencies
+│   ├── data/                                 # Processed data subset required for the live app
+│   └── asset/                                # Dashboard logos and icons
+│
+├── Benchmarking/                             # Performance Logs (Pandas vs. Polars)
+│   ├── EDA_Benchmarking_...csv               # Runtime/Memory logs for Imputation & Text Analysis
+│   └── Review_Consolidation_...csv           # Runtime/Memory logs for Data Consolidation
+│
+├── Output/                                   # Pipeline Outputs & Intermediate Files
+│   ├── absa_analysis_...results.csv          # Final Sentiment Analysis results (Used in Dashboard)
+│   ├── gemini_actionable_insights.csv        # Final AI Summaries (Used in Dashboard)
+│   ├── cleaned_reviews_...csv                # Output from Step 3A (Consolidation)
+│   └── imputed_reviews_...csv                # Output from Step 3B (Imputation)
+│
+├── Data/                                     # Source Data
+│   ├── [platform]_reviews.json               # Raw scraped data (JSON/CSV)
+│   └── [platform]...translated...csv         # Data processed via Translation API
+│
+└── README.md                                 # Project Documentation
